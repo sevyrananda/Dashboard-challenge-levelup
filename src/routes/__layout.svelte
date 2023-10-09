@@ -5,16 +5,12 @@
 	import '@fontsource/montserrat/400.css'
 	import '@fontsource/mulish/700.css'
 	import '@fontsource/mulish/400.css'
-	import Navbar from '$lib/components/Navbar.svelte'
-	import Footer from '$lib/components/Footer.svelte'
 </script>
 
 <div class="w-full min-h-screen">
-	<Navbar />
 
 	<slot />
 
-	<Footer />
 </div>
 
 <style lang="postcss" global>

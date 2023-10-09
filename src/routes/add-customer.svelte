@@ -136,11 +136,6 @@
 									<div class="w-full overflow-x-auto">
 										<div class="flex justify-between items-center">
 											<h2 class="my-6 text-xl font-regular text-black-700">Customer List</h2>
-											<a
-												href="/add-customer"
-												class="py-2 px-4 bg-purple-800 text-white rounded hover:bg-blue-600"
-												>+ Add Data</a
-											>
 										</div>
 
 										<table class="w-full whitespace-no-wrap">
@@ -379,44 +374,98 @@
 										>
 									</div>
 								</div>
-								<h2 class="my-6 text-xl font-regular text-black-700">Chart</h2>
-								<div class="grid gap-6 mb-8 md:grid-cols-2">
-									<div class="min-w-0 p-4 bg-white rounded-lg shadow-xs">
-										<h4 class="mb-4 font-semibold text-gray-800">Revenue</h4>
-										<canvas id="pie" />
-										<div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600">
-											<div class="flex items-center">
-												<span class="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full" />
-												<span>Shirts</span>
-											</div>
-											<div class="flex items-center">
-												<span class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full" />
-												<span>Shoes</span>
-											</div>
-											<div class="flex items-center">
-												<span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full" />
-												<span>Bags</span>
-											</div>
-										</div>
-									</div>
-									<div class="min-w-0 p-4 bg-white rounded-lg shadow-xs">
-										<h4 class="mb-4 font-semibold text-gray-800">Traffic</h4>
-										<canvas id="lineChart" />
-										<div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600">
-											<div class="flex items-center">
-												<span class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full" />
-												<span>Organic</span>
-											</div>
-											<div class="flex items-center">
-												<span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full" />
-												<span>Paid</span>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</main>
 					</div>
+					<aside class="w-1/4 bg-white p-4">
+						<div class="flex justify-between items-center">
+							<h3 class="text-xl font-semibold mb-4 mt-10">Add Customer</h3>
+							<button class="text-gray-600 hover:text-gray-800 focus:outline-none">
+								<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M6 18L18 6M6 6l12 12"
+									/>
+								</svg>
+							</button>
+						</div>
+						<form>
+							<div class="mb-4 flex items-center justify-center">
+								<div
+									class="relative rounded-full w-32 h-32 bg-gray-100 flex items-center justify-center overflow-hidden"
+								>
+									<img
+										src="https://via.placeholder.com/150"
+										alt="Profile"
+										class="object-cover max-w-full max-h-full"
+									/>
+									<input
+										type="file"
+										accept="image/*"
+										class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+									/>
+								</div>
+							</div>
+							<div class="mb-4">
+								<label class="block text-gray-700 text-sm font-bold mb-2" for="fisrt_name"
+									>First Name</label
+								>
+								<input
+									type="text"
+									class="w-full px-4 py-2 border rounded-md bg-white text-gray-700 focus:outline-none focus:border-purple-500"
+									placeholder="Enter first name"
+								/>
+							</div>
+							<div class="mb-4">
+								<label class="block text-gray-700 text-sm font-bold mb-2" for="last_name"
+									>Last Name</label
+								>
+								<input
+									type="text"
+									class="w-full px-4 py-2 border rounded-md bg-white text-gray-700 focus:outline-none focus:border-purple-500"
+									placeholder="Enter last name"
+								/>
+							</div>
+							<div class="mb-4">
+								<label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+								<input
+									type="email"
+									class="w-full px-4 py-2 border rounded-md bg-white text-gray-700 focus:outline-none focus:border-purple-500"
+									placeholder="Enter email"
+								/>
+							</div>
+							<div class="mb-4">
+								<label class="block text-gray-700 text-sm font-bold mb-2" for="phone"
+									>Phone Number</label
+								>
+								<input
+									type="email"
+									class="w-full px-4 py-2 border rounded-md bg-white text-gray-700 focus:outline-none focus:border-purple-500"
+									placeholder="Enter phone number"
+								/>
+							</div>
+							<div class="mb-4">
+								<label class="block text-gray-700 text-sm font-bold mb-2" for="gender">Gender</label
+								>
+								<select class="w-full p-2 border rounded-md bg-white" id="gender" name="gender">
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+									<option value="other">Other</option>
+								</select>
+							</div>
+							<button
+								type="submit"
+								class="w-full py-3 px-4 bg-purple-800 text-white rounded-md hover:bg-purple-600 mt-7"
+							>
+								Submit
+							</button>
+							<a href="/" class="block text-center text-purple-800 hover:underline mt-2"
+								>Back to Home</a
+							>
+						</form>
+					</aside>
 				</div>
 			</section>
 			<div
@@ -426,62 +475,5 @@
 				style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;"
 			/>
 		</div>
-		<script>
-			// Data pendapatan 
-			var revenueData = {
-				labels: ['Shirts', 'Shoes', 'Bags'],
-				datasets: [
-					{
-						data: [300, 450, 200], 
-						backgroundColor: ['#3490dc', '#38a169', '#9561e2']
-					}
-				]
-			}
-
-			// Inisialisasi chart
-			var ctxPie = document.getElementById('pie').getContext('2d')
-			var pieChart = new Chart(ctxPie, {
-				type: 'pie',
-				data: revenueData
-			})
-		</script>
-
-		<script>
-			// Data traffic 
-			var trafficData = {
-				labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-				datasets: [
-					{
-						label: 'Organic',
-						borderColor: '#38a169',
-						data: [100, 120, 150, 130, 160, 140], 
-						fill: false
-					},
-					{
-						label: 'Paid',
-						borderColor: '#9561e2',
-						data: [80, 90, 110, 100, 120, 110], 
-						fill: false
-					}
-				]
-			}
-
-			// Inisialisasi chart garis
-			var ctxLine = document.getElementById('lineChart').getContext('2d')
-			var lineChart = new Chart(ctxLine, {
-				type: 'line',
-				data: trafficData,
-				options: {
-					scales: {
-						x: {
-							beginAtZero: true
-						},
-						y: {
-							beginAtZero: true
-						}
-					}
-				}
-			})
-		</script>
 	</body></html
 >
